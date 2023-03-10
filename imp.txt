@@ -1,0 +1,2 @@
+for creating fake server in fake server directory -> npm i json-server
+to run i -> json-server --watch db.json --port 3001

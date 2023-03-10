@@ -1,0 +1,74 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Dhyey",
+      "branch": "cs",
+      "sem": 6,
+      "clg_id": "Clg_id",
+      "email": "email",
+      "password": "password",
+      "role": "role"
+    },
+    {
+      "name": "dhyey",
+      "branch": "it",
+      "sem": "6",
+      "clg_id": "testmail@gmail.com",
+      "email": "dhyey@gmail.com",
+      "password": "12345",
+      "role": "Participant",
+      "id": 2
+    },
+    {
+      "name": "jemin",
+      "branch": "cs",
+      "sem": "6",
+      "clg_id": "testmail2@gmail.com",
+      "email": "jemin@gmail.com",
+      "password": "12345",
+      "role": "Admin",
+      "id": 3
+    },
+    {
+      "name": "james",
+      "branch": "cse",
+      "sem": "7",
+      "clg_id": "testmail3@gmail.com",
+      "email": "james@gmail.com",
+      "password": "12345",
+      "role": "Admin",
+      "id": 4
+    },
+    {
+      "name": "james",
+      "branch": "cse",
+      "sem": "7",
+      "clg_id": "testmail4@gmail.com",
+      "email": "james123@gmail.com",
+      "password": "12345",
+      "role": "Admin",
+      "id": 5
+    },
+    {
+      "name": "james",
+      "branch": "cse",
+      "sem": "8",
+      "clg_id": "testmail7@gmail.com",
+      "email": "james12345@gmail.com",
+      "password": "12345",
+      "role": "Participant",
+      "id": 6
+    }
+  ],
+  "otps": [
+    {
+      "id": 1,
+      "otp": "1234"
+    },
+    {
+      "id": 2,
+      "otp": "3456"
+    }
+  ]
+}
