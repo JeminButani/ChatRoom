@@ -52,25 +52,25 @@ export default function OtpScreen() {
             >
               <div className="flex flex-row h-50 justify-center">
                 <input
-                  type="number"
+                  type="text"
                   className="p-2 w-10 rounded-xl border-2 text-center"
                   maxLength="1"
                   name="val1"
                 />
                 <input
-                  type="number"
+                  type="text"
                   className="p-2 w-10 rounded-xl border-2 text-center"
                   maxLength="1"
                   name="val2"
                 />
                 <input
-                  type="number"
+                  type="text"
                   className="p-2 w-10 rounded-xl border-2 text-center"
                   maxLength="1"
                   name="val3"
                 />
                 <input
-                  type="number"
+                  type="text"
                   className="p-2 w-10 rounded-xl border-2 text-center"
                   maxLength="1"
                   name="val4"

@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainDashboard from "./pages/MainDashboard.js";
 import SelectTopic from "./pages/SelectTopic.js";
 import ChatRoom from "./pages/ChatRoom.js";
+import AddParticipant from "./pages/AddParticipant.js";
 
 function App() {
   return (
@@ -18,12 +19,7 @@ function App() {
             <Route exact path="otp" element={<OtpScreen />} />
             <Route exact path="topic" element={<SelectTopic />} />
             <Route exact path="chatRoom" element={<ChatRoom />} />
-
-            {/* <User_register/> */}
-            {/* <User_login/> */}
-            {/* <Main_dashboard /> */}
-            {/* <Otp_screen/> */}
-            {/* <Chat_room/> */}
+            <Route exact path="addparticipant" element={<AddParticipant />} />
           </Route>
         </Routes>
       </BrowserRouter>
