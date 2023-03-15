@@ -5,8 +5,8 @@ import { Link, useLocation } from "react-router-dom";
 
 export default function AddParticipant() {
   const location = useLocation();
-  const { topic } = location.state;
-  const t = topic;
+  const { topic, name } = location.state;
+
   return (
     <>
       <section className="bg-[#413D3D] min-h-screen flex items-center justify-center">
@@ -30,7 +30,7 @@ export default function AddParticipant() {
               {/* <input className="p-2 rounded-xl border" type="text" name="mobileNo" placeholder="Enter Phone No."/> */}
 
               <button className="bg-[#2c2b2b] rounded-xl text-white hover:scale-105 duration-300 py-2">
-                <Link to="/chatroom" state={{ topic: t }}>
+                <Link to="/chatroom" state={{ topic: topic, name: name }}>
                   Next
                 </Link>
               </button>

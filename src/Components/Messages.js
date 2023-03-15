@@ -1,14 +1,34 @@
 import React from "react";
+import "./Messages.scss";
 
-const Messages = ({ messages }) => {
+const Messages = ({ messages, name }) => {
+  
   return (
-    <div>
+    <div className="message">
       {messages &&
-        messages.map((e) => (
-          <h2 className="font-bold text-2xl text-[#413D3D]" key={e.id}>
-            {e.name}:{e.message}
-          </h2>
-        ))}
+        messages.map((e) => {
+          if (e.name.toUpperCase() === name.toUpperCase()) {
+            return (
+              <div className="Right">
+                <div className="Rightblock" key={e.id}>
+                  <div className="name">{e.name.toUpperCase()}</div>
+                  <div className="msg">{e.message}</div>
+                </div>
+              </div>
+            );
+          } else {
+            return (
+              <div className="Left">
+                <h2 className="Left" key={e.id}>
+                  <div className="Leftblock" key={e.id}>
+                    <div className="name">{e.name.toUpperCase()}</div>
+                    <div className="msg">{e.message}</div>
+                  </div>
+                </h2>
+              </div>
+            );
+          }
+        })}
     </div>
   );
 };

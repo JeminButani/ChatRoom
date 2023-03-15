@@ -9,6 +9,7 @@ export default function UserLogin() {
   const location = useLocation();
   const { role } = location.state;
   const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -35,7 +36,7 @@ export default function UserLogin() {
         e.password === credentials.password
       ) {
         // console.log("Yes");
-        navigate("/otp");
+        navigate("/otp", { state: { name: e.name } });
       }
     });
 

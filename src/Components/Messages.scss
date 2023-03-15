@@ -1,0 +1,75 @@
+.example::-webkit-scrollbar {
+    display: none;
+}
+
+.message{
+    margin-left:auto;
+    margin-right:auto;
+    width: 100%;
+    padding: 5px;
+    
+
+    .Right{
+        justify-content: right;
+        align-items: flex-end;
+        display: flex;
+        flex-direction: column;
+        margin-left: 50%;
+        margin-top: 1%;
+
+        .Rightblock{
+            margin-left:auto;
+            display: flex;
+            flex-direction: column;
+
+            .name{
+                justify-content: right;
+                align-items: flex-end;
+                display: flex;
+            }
+            .msg{
+                background-color: lightblue;
+                border: gray solid 0.5px;
+                border-radius: 5px;
+                justify-content: center;
+                display: flex;
+                width: auto;
+                font-size: x-large;
+                padding: 5px;
+            }
+            
+        }
+        
+    }
+
+    .Left{
+        justify-content: left;
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column; 
+        margin-top: 1%;
+
+        .Leftblock{
+            margin-left:auto;
+            display: flex;
+            flex-direction: column;
+
+            .name{
+                justify-content: left;
+                align-items: flex-start;
+                display: flex;
+            }
+            .msg{
+                background-color: rgb(255, 185, 138);
+                border: gray solid 0.5px;
+                border-radius: 5px;
+                justify-content: center;
+                display: flex;
+                width: auto;
+                font-size: x-large;
+                padding: 5px;
+            }
+            
+        }
+    }
+}

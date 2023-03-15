@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Border from "../Components/Border";
 import "../Style/User_register.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function UserLogin() {
+  const location = useLocation();
+  const { name } = location.state;
   const [topic, setTopic] = useState("");
   return (
     <>
@@ -31,7 +33,7 @@ export default function UserLogin() {
               {/* <input className="p-2 rounded-xl border" type="text" name="mobileNo" placeholder="Enter Phone No."/> */}
 
               <button className="bg-[#413D3D] rounded-xl text-white hover:scale-105 duration-300 py-2">
-                <Link to="/addparticipant" state={{ topic: topic }}>
+                <Link to="/addparticipant" state={{ topic: topic, name: name }}>
                   Enter Chat Room
                 </Link>
               </button>
@@ -41,17 +43,6 @@ export default function UserLogin() {
               <p className="text-center text-sm">OR</p>
               <hr className="border-gray-400" />
             </div> */}
-            <p className="mt-5 text-xs border-b border-gray-400 py-4">
-              Forgot your password?
-            </p>
-            <div className="mt-3 text-xs flex justify-between items-center">
-              <p>If you are not a member....</p>
-              <Link to="/signup">
-                <button className="py-2 px-5 bg-white hover:scale-110 duration-300 border rounded-xl">
-                  Register
-                </button>
-              </Link>
-            </div>
           </div>
         </div>
       </section>

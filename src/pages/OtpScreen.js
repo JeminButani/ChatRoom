@@ -2,9 +2,11 @@ import React from "react";
 import Border from "../Components/Border";
 import "../Style/User_register.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function OtpScreen() {
+  const location = useLocation();
+  const { name } = location.state;
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +29,7 @@ export default function OtpScreen() {
     console.log(temp2);
     temp2.forEach((ele) => {
       if (ele.otp === temp) {
-        navigate("/topic");
+        navigate("/topic", { state: { name: name } });
         console.log("yes");
       } else {
         console.log("no");
