@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import Border from "../Components/Border";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Messages from "../Components/Messages";
 import "./ChatRoom.scss";
@@ -8,12 +7,20 @@ import "./ChatRoom.scss";
 export default function ChatRoom() {
   const location = useLocation();
   const { topic, name } = location.state;
+  const navigate = useNavigate();
 
   const [messages, SetMessages] = useState([]);
+  const [ranks, setRanks] = useState([]);
   const msgs = [];
+  const rnks = [];
   const messagesEndRef = useRef(null);
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    // messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (messagesEndRef.current !== null)
+      messagesEndRef.current.scrollIntoView({
+        block: "end",
+        behavior: "smooth",
+      });
   };
 
   const handleSubmit = async (e) => {
@@ -25,12 +32,6 @@ export default function ChatRoom() {
       name: name,
     };
 
-    // let data = JSON.stringify({
-    //   id: id,
-    //   message: msg,
-    //   name: name,
-    // });
-
     try {
       const res = await axios.post("http://localhost:3001/messages", obj);
     } catch (err) {
@@ -38,13 +39,28 @@ export default function ChatRoom() {
     }
     SetMessages([]);
     fetchMessage();
+    e.target.message.value = "";
+  };
+
+  const fetchRanks = async () => {
+    var res = [];
+    try {
+      res = await axios.get("http://localhost:3001/ranks");
+    } catch (err) {
+      alert(err);
+    }
+    // const temp2 = res.data;
+    // temp2.forEach((ele) => {
+    //   rnks.push({ rank: ele.rank, name: ele.name, id: ele.id });
+    // });
+
+    setRanks(res.data);
   };
 
   const fetchMessage = async () => {
     var res = [];
     try {
       res = await axios.get("http://localhost:3001/messages");
-      console.log(res.data);
     } catch (err) {
       alert(err);
     }
@@ -54,17 +70,31 @@ export default function ChatRoom() {
     });
 
     SetMessages(msgs);
+
     scrollToBottom();
   };
 
   useEffect(() => {
     SetMessages([]);
     fetchMessage();
+    fetchRanks();
   }, []);
 
   return (
     <>
-      <section className="bg-[#413D3D] min-h-screen flex items-center justify-center">
+      <section className="bg-[#413D3D] min-h-screen flex items-center justify-center flex-col">
+        <div className="endchat">
+          <button
+            className="end"
+            onClick={() => {
+              if (window.confirm("Are you sure you want to exit?")) {
+                navigate("/");
+              }
+            }}
+          >
+            Exit Chat
+          </button>
+        </div>
         <div className="chatMain">
           <div className="topic">
             <h2>Topic : {topic && topic}</h2>
@@ -73,10 +103,11 @@ export default function ChatRoom() {
           <br />
           <div className="chatbox" ref={messagesEndRef}>
             <Messages messages={messages} name={name} />
+            <div className="test" ref={messagesEndRef}></div>
           </div>
           <form action="" className="form" onSubmit={handleSubmit}>
             <input
-              className="  inputMsg"
+              className="inputMsg"
               type="text"
               name="message"
               placeholder="Enter message"
@@ -84,6 +115,27 @@ export default function ChatRoom() {
 
             <button className="sendBtn">Send</button>
           </form>
+        </div>
+
+        <div className="ranks">
+          <table>
+            <tr>
+              <th>Rank</th>
+              <th>Name</th>
+            </tr>
+            {ranks &&
+              ranks.map((e) => {
+                return (
+                  <tr key={e.id}>
+                    <th>{e.rank}</th>
+                    <th>{e.name}</th>
+                  </tr>
+                );
+              })}
+          </table>
+          <button className="refresh" onClick={() => fetchRanks()}>
+            Refesh
+          </button>
         </div>
       </section>
     </>

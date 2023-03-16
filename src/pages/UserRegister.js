@@ -1,13 +1,12 @@
 import React from "react";
 import Border from "../Components/Border";
 import "../Style/User_register.css";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 
 export default function UserRegister() {
   const location = useLocation();
   const { role } = location.state;
-  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
 

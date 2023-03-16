@@ -1,12 +1,18 @@
-.example::-webkit-scrollbar {
-    display: none;
-}
 
 .message{
     margin-left:auto;
     margin-right:auto;
     width: 100%;
     padding: 5px;
+    
+    // height: 59vh;
+    // overflow-y: scroll;
+    // scrollbar-width: none;
+    // &::-webkit-scrollbar{
+    //     display: none;
+    // }
+
+    
     
 
     .Right{
@@ -21,18 +27,21 @@
             margin-left:auto;
             display: flex;
             flex-direction: column;
-
-            .name{
-                justify-content: right;
+            
+            .msg{
+                .name{
+                justify-content: left;
                 align-items: flex-end;
                 display: flex;
+                font-weight: bolder;
+                font-size: medium;
             }
-            .msg{
-                background-color: lightblue;
+                background-color: rgb(197, 239, 253);
                 border: gray solid 0.5px;
                 border-radius: 5px;
                 justify-content: center;
                 display: flex;
+                flex-direction: column;
                 width: auto;
                 font-size: x-large;
                 padding: 5px;
@@ -54,17 +63,21 @@
             display: flex;
             flex-direction: column;
 
-            .name{
+            
+            .msg{
+                .name{
                 justify-content: left;
                 align-items: flex-start;
                 display: flex;
+                font-weight: bolder;
+                font-size: medium;
             }
-            .msg{
-                background-color: rgb(255, 185, 138);
+                background-color: rgb(255, 231, 215);
                 border: gray solid 0.5px;
                 border-radius: 5px;
                 justify-content: center;
                 display: flex;
+                flex-direction: column;
                 width: auto;
                 font-size: x-large;
                 padding: 5px;
@@ -73,3 +86,4 @@
         }
     }
 }
+

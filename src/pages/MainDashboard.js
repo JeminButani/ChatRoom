@@ -15,35 +15,35 @@ export default function MainDashboard() {
             <br />
             <br />
             <form>
-              <Link to="signup" state={{ role: "Admin" }}>
+              <Link to="login" state={{ role: "Admin" }}>
                 <button className="bg-[#413D3D] rounded-xl text-white hover:scale-105 p-8 w-full duration-300 py-2">
                   ADMIN
                 </button>
               </Link>
               <br />
               <br />
-              <Link to="signup" state={{ role: "Co-ordinator" }}>
+              <Link to="login" state={{ role: "Co-ordinator" }}>
                 <button className="bg-[#413D3D] rounded-xl text-white hover:scale-105 w-full duration-300 py-2">
                   CO-ORDINATOR
                 </button>
               </Link>
               <br />
               <br />
-              <Link to="signup" state={{ role: "Host" }}>
+              <Link to="login" state={{ role: "Host" }}>
                 <button className="bg-[#413D3D] rounded-xl text-white hover:scale-105 w-full duration-300 py-2">
                   HOST
                 </button>
               </Link>
               <br />
               <br />
-              <Link to="signup" state={{ role: "Participant" }}>
+              <Link to="login" state={{ role: "Participant" }}>
                 <button className="bg-[#413D3D] rounded-xl text-white hover:scale-105 w-full duration-300 py-2">
                   PARTICIPANT
                 </button>
               </Link>
               <br />
               <br />
-              <Link to="signup" state={{ role: "Viewer" }}>
+              <Link to="login" state={{ role: "Viewer" }}>
                 <button className="bg-[#413D3D] rounded-xl text-white hover:scale-105 w-full duration-300 py-2">
                   VIEWER
                 </button>
