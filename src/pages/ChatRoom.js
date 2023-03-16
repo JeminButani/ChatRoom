@@ -11,9 +11,11 @@ export default function ChatRoom() {
 
   const [messages, SetMessages] = useState([]);
   const [ranks, setRanks] = useState([]);
+  const [sidebarToggled, setSidebarToggled] = useState(false);
   const msgs = [];
   const rnks = [];
   const messagesEndRef = useRef(null);
+
   const scrollToBottom = () => {
     // messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     if (messagesEndRef.current !== null)
@@ -84,6 +86,43 @@ export default function ChatRoom() {
     <>
       <section className="bg-[#413D3D] min-h-screen flex items-center justify-center flex-col">
         <div className="endchat">
+          <aside className={`${sidebarToggled ? "visible" : ""}`}>
+            <div className="ranks">
+              <table>
+                <tr>
+                  <th>Rank</th>
+                  <th>Name</th>
+                </tr>
+                {ranks &&
+                  ranks.map((e) => {
+                    return (
+                      <tr key={e.id}>
+                        <th>{e.rank}</th>
+                        <th>{e.name.toUpperCase()}</th>
+                      </tr>
+                    );
+                  })}
+              </table>
+              <div className="btn">
+                <button className="refresh" onClick={() => fetchRanks()}>
+                  Refresh
+                </button>
+                <button
+                  className="refresh"
+                  onClick={() => setSidebarToggled(!sidebarToggled)}
+                >
+                  Back
+                </button>
+              </div>
+            </div>
+          </aside>
+          <button
+            className="end"
+            onClick={() => setSidebarToggled(!sidebarToggled)}
+          >
+            Show Ranks
+          </button>
+
           <button
             className="end"
             onClick={() => {
@@ -115,27 +154,6 @@ export default function ChatRoom() {
 
             <button className="sendBtn">Send</button>
           </form>
-        </div>
-
-        <div className="ranks">
-          <table>
-            <tr>
-              <th>Rank</th>
-              <th>Name</th>
-            </tr>
-            {ranks &&
-              ranks.map((e) => {
-                return (
-                  <tr key={e.id}>
-                    <th>{e.rank}</th>
-                    <th>{e.name}</th>
-                  </tr>
-                );
-              })}
-          </table>
-          <button className="refresh" onClick={() => fetchRanks()}>
-            Refesh
-          </button>
         </div>
       </section>
     </>
