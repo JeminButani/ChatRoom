@@ -59,6 +59,35 @@
       "password": "12345",
       "role": "Participant",
       "id": 6
+    },
+    {
+      "name": "Dhyey vyas",
+      "branch": "IT",
+      "sem": "6",
+      "clg_id": "20ECUOG089",
+      "email": "20ecuog089@ddu.ac.in",
+      "password": "12345",
+      "role": "undefined",
+      "id": 7
+    },
+    {
+      "name": "Dhyey vyas",
+      "branch": "IT",
+      "sem": "6",
+      "clg_id": "20ECUOG089",
+      "email": "20ecuog089@ddu.ac.in",
+      "password": "12345",
+      "id": 8
+    },
+    {
+      "name": "d",
+      "branch": "sds",
+      "sem": "6",
+      "clg_id": "testmail@gmail.com",
+      "email": "testmail@gmail.com",
+      "password": "12345",
+      "role": "Admin",
+      "id": 9
     }
   ],
   "otps": [
@@ -248,12 +277,11 @@
       "id": 4,
       "name": "kunj",
       "rank": 4
-    },{
-      
-        "id": 5,
-        "name": "shubham",
-        "rank": 5
-      
+    },
+    {
+      "id": 5,
+      "name": "shubham",
+      "rank": 5
     }
   ]
 }

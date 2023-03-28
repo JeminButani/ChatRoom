@@ -87,7 +87,7 @@ export default function UserLogin() {
             </p>
             <div className="mt-3 text-xs flex justify-between items-center">
               <p>If you are not a member....</p>
-              <Link to="/signup">
+              <Link to="/signup" state={role}>
                 <button className="py-2 px-5 bg-white hover:scale-110 duration-300 border rounded-xl">
                   Register
                 </button>

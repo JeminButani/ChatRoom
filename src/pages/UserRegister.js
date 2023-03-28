@@ -16,7 +16,7 @@ export default function UserRegister() {
     const branch = e.target.branch.value;
     const sem = e.target.sem.value;
     const Clg_id = e.target.Clg_id.value;
-    // const role = e.target.role.value;
+    const srole = e.target.srole.value;
 
     const obj = {
       name: name,
@@ -25,7 +25,7 @@ export default function UserRegister() {
       clg_id: Clg_id,
       email: email,
       password: password,
-      role: role,
+      role: srole,
     };
 
     try {
@@ -87,9 +87,9 @@ export default function UserRegister() {
                 name="password"
                 placeholder="Enter Password"
               />
-              {/* <select
+              <select
                 className="form-select"
-                name="role"
+                name="srole"
                 aria-label="Default select example"
               >
                 <option selected>Select Role</option>
@@ -98,7 +98,7 @@ export default function UserRegister() {
                 <option value="Host">Host</option>
                 <option value="Participant">Participant</option>
                 <option value="Viewer">Viewer</option>
-              </select> */}
+              </select>
               <button className="bg-[#413D3D] rounded-xl text-white hover:scale-105 duration-300 py-2">
                 Submit
               </button>
